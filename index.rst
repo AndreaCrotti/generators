@@ -11,7 +11,22 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
+Teaser example
+==============
+ 
+Sieve of erathostenes
 
+::
+
+    primesTo m = eratos [2..m]  where
+       eratos []     = []
+       eratos (p:xs) = p : eratos (xs `minus` [p, p+p..m])
+
+Theory
+======
+
+Iterators, iterable, generators
+===============================
 
 Indices and tables
 ==================
