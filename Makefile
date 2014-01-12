@@ -14,7 +14,10 @@ DROP = $(HOME)/Dropbox/Public/talks
 
 .PHONY: unit clean upload
 
-all: unit upload
+all: test unit
+
+test:
+	nosetests code/generators.py
 
 upload:
 	cp -Rv $(BUILDDIR) $(DROP)/

@@ -6,27 +6,68 @@
 Welcome to generators's documentation!
 ======================================
 
-Contents:
+Twitter: @andreacrotti
 
-.. toctree::
-   :maxdepth: 2
+Slides: https://github.com/AndreaCrotti/generator
+
+Working for http://www.wazoku.com/:
+
+.. image:: img/wazoku.png
+   :height: 70
+
+
+Why you should care
+===================
 
 Teaser example
 ==============
  
 Sieve of erathostenes
 
-::
+.. code-block:: haskell
 
     primesTo m = eratos [2..m]  where
        eratos []     = []
        eratos (p:xs) = p : eratos (xs `minus` [p, p+p..m])
+
+
+Infinite list of even numbers:
+
+.. code:: haskell
+
+   even = [x | x <- [0..], x `mod` 2 == 0]
+
+Using ifilter
+
+.. code:: python
+    
+    is_even = lambda n: n % 2 == 0
+    even_gen = itertools.ifilter(is_even, itertools.count(0))
+    # print the first 10 elements
+    for even in itertools.islice(even_gen, 0, 10):
+        print(even)
+
+With a custom generator:
+
+.. literalinclude:: code/generators.py
+    :pyobject: gen_even
+
+
+With an iterator:
+
+.. literalinclude:: code/generators.py
+   :pyobject: GenIterator
+
+.. TODO: add some information about yield from
 
 Theory
 ======
 
 Iterators, iterable, generators
 ===============================
+
+Possible drawbacks
+==================
 
 Indices and tables
 ==================
