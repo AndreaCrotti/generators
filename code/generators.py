@@ -93,6 +93,12 @@ def overflow_gen():
         n += 1
 
 
+def homemade_context_manager(gen):
+    """Given a generator function do a try finally
+    """
+    next(gen)
+
+
 class TestOverflow(unittest.TestCase):
     def test_overflow_list(self):
         with self.assertRaises(Exception):

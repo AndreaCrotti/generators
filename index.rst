@@ -86,6 +86,10 @@ Theory
 Iterators, iterable, generators
 ===============================
 
+- *Generator*: A function which returns an iterator.
+- *Iterator*: An object representing a stream of data.
+- *Iterable*: an object capable of returning its members one at a time.
+
 Possible drawbacks
 ==================
 
@@ -102,4 +106,6 @@ Possible drawbacks
 Resources
 =========
 
-- http://www.python.org/dev/peps/pep-0289/
+.. _generator_expression: http://www.python.org/dev/peps/pep-0289/
+.. _yield_from: http://www.python.org/dev/peps/pep-0380/
+.. _python_glossary: http://docs.python.org/2/glossary.html
