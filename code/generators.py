@@ -1,4 +1,5 @@
 import itertools
+import unittest
 # TODO: try to use python future to see how the iteration works
 
 
@@ -71,6 +72,36 @@ def construct_result(gen):
         res.append(next(gen))
 
     return res
+
+
+def overflow_list():
+    res = []
+    for n in range(101):
+        if n == 100:
+            raise Exception("Overflow Overflow!")
+        res.append(n)
+
+    return res
+
+
+def overflow_gen():
+    n = 0
+    while n < 101:
+        if n == 100:
+            raise Exception("Overflow Overflow!")
+        yield n
+        n += 1
+
+
+class TestOverflow(unittest.TestCase):
+    def test_overflow_list(self):
+        with self.assertRaises(Exception):
+            overflow_list()
+
+    def test_overflow_gen(self):
+        gen = overflow_gen()
+        self.assertEqual(next(gen), 0)
+        self.assertEqual(next(gen), 1)
 
 
 def test_gen_ifilter():

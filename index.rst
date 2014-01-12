@@ -1,11 +1,6 @@
-.. generators documentation master file, created by
-   sphinx-quickstart2 on Sun Jan  5 15:25:23 2014.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
-======================================
-How to step to the infinite and beyond
-======================================
+========================================
+ How to step to the infinite and beyond
+========================================
 
 Twitter: @andreacrotti
 
@@ -16,17 +11,10 @@ Working for http://www.wazoku.com/:
 .. image:: img/wazoku.png
    :height: 70
 
-Intro
-=====
-
-SAmple slide
-
-- bullet
-- point
-
 
 Even numbers
 ============
+
 
 .. literalinclude:: code/generators.py
     :pyobject: is_even
@@ -46,20 +34,18 @@ Composability
 How do I get the first 10 even numbers?
 
 .. literalinclude:: code/generators.py
+    :pyobject: classic_ten_first_even
+
+
+*No code reuse!*
+
+What if I could do this?
+
+.. literalinclude:: code/generators.py
     :pyobject: ten_first_even
 
-
-Teaser example
-==============
- 
-Sieve of erathostenes
-
-.. code-block:: haskell
-
-    primesTo m = eratos [2..m]  where
-       eratos []     = []
-       eratos (p:xs) = p : eratos (xs `minus` [p, p+p..m])
-
+Generators
+==========
 
 Infinite list of even numbers:
 
@@ -67,15 +53,19 @@ Infinite list of even numbers:
 
    even = [x | x <- [0..], x `mod` 2 == 0]
 
-Using ifilter
 
-.. code:: python
-    
-    is_even = lambda n: n % 2 == 0
-    even_gen = itertools.ifilter(is_even, itertools.count(0))
-    # print the first 10 elements
-    for even in itertools.islice(even_gen, 0, 10):
-        print(even)
+
+Teaser example
+==============
+ 
+Sieve of Erathostenes
+
+.. code-block:: haskell
+
+    primesTo m = eratos [2..m]  where
+       eratos []     = []
+       eratos (p:xs) = p : eratos (xs `minus` [p, p+p..m])
+
 
 With a custom generator:
 
@@ -99,10 +89,17 @@ Iterators, iterable, generators
 Possible drawbacks
 ==================
 
-Indices and tables
-==================
+.. TODO: add an example where debugging with a generator is a lot harder
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. literalinclude:: code/generators.py
+    :pyobject: overflow_list
 
+.. TODO: show in real time that this fails
+
+.. literalinclude:: code/generators.py
+    :pyobject: overflow_gen
+
+Resources
+=========
+
+- http://www.python.org/dev/peps/pep-0289/
