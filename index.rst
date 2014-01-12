@@ -3,7 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to generators's documentation!
+======================================
+How to step to the infinite and beyond
 ======================================
 
 Twitter: @andreacrotti
@@ -15,9 +16,38 @@ Working for http://www.wazoku.com/:
 .. image:: img/wazoku.png
    :height: 70
 
+Intro
+=====
 
-Why you should care
-===================
+SAmple slide
+
+- bullet
+- point
+
+
+Even numbers
+============
+
+.. literalinclude:: code/generators.py
+    :pyobject: is_even
+
+.. literalinclude:: code/generators.py
+    :pyobject: next_even
+
+.. literalinclude:: code/generators.py
+    :pyobject: classic_even_gen
+
+*Any problem with that??*
+
+
+Composability
+=============
+
+How do I get the first 10 even numbers?
+
+.. literalinclude:: code/generators.py
+    :pyobject: ten_first_even
+
 
 Teaser example
 ==============
