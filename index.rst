@@ -88,7 +88,7 @@ Iterators, iterable, generators
 
 - *Generator*: A function which returns an iterator.
 - *Iterator*: An object representing a stream of data.
-- *Iterable*: an object capable of returning its members one at a time.
+- *Iterable*: An object capable of returning its members one at a time.
 
 Possible drawbacks
 ==================
