@@ -15,12 +15,10 @@ Working for http://www.wazoku.com/:
 Even numbers
 ============
 
+Generate *even* numbers:
 
 .. literalinclude:: code/generators.py
     :pyobject: is_even
-
-.. literalinclude:: code/generators.py
-    :pyobject: next_even
 
 .. literalinclude:: code/generators.py
     :pyobject: classic_even_gen
@@ -28,8 +26,8 @@ Even numbers
 *Any problem with that??*
 
 
-Composability
-=============
+First n even numbers?
+=====================
 
 How do I get the first 10 even numbers?
 
@@ -37,9 +35,21 @@ How do I get the first 10 even numbers?
     :pyobject: classic_ten_first_even
 
 
-*No code reuse!*
+Which becomes more generally:
+
+.. literalinclude:: code/generators.py
+    :pyobject: classic_first_n_even
+
+Composability
+=============
+
+.. the generation function contains all the logic
 
 What if I could do this?
+*I want to reuse the generation function*
+
+.. literalinclude:: code/
+
 
 .. literalinclude:: code/generators.py
     :pyobject: ten_first_even
@@ -52,7 +62,6 @@ Infinite list of even numbers:
 .. code:: haskell
 
    even = [x | x <- [0..], x `mod` 2 == 0]
-
 
 
 Teaser example
@@ -103,9 +112,23 @@ Possible drawbacks
 .. literalinclude:: code/generators.py
     :pyobject: overflow_gen
 
+Generators as lightweight threads
+=================================
+
+Example from the monocle_ documentation:
+
+::
+
+    @monocle.o
+    def request():
+        resp = yield HttpClient.query('http://127.0.0.1:8088/')
+        print(resp.code, resp.body)
+
 Resources
 =========
 
 .. _generator_expression: http://www.python.org/dev/peps/pep-0289/
 .. _yield_from: http://www.python.org/dev/peps/pep-0380/
 .. _python_glossary: http://docs.python.org/2/glossary.html
+.. only for python2 for now apparently
+.. _monocle: https://github.com/saucelabs/monocle

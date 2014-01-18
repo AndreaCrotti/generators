@@ -18,8 +18,26 @@ def classic_ten_first_even():
     return res
 
 
+def classic_first_n_even(count):
+    even = 0
+    res = []
+    while len(res) < count:
+        res.append(even)
+        even += 2
+
+    return res
+
+
 def ten_first_even():
     return list(itertools.islice(gen_even(), 10))
+
+
+def ten_first_even_yield():
+    gen = gen_even()
+    count = 0
+    while count < 10:
+        yield gen
+        count += 2
 
 
 def is_even(num):
