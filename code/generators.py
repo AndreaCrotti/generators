@@ -54,6 +54,14 @@ def gen_even(start=0):
         even += 2
 
 
+def gen_even_yield_from(start=0):
+    yield from gen_even(start)
+
+
+def simple_coroutines():
+    pass
+
+
 def construct_result(gen):
     res = []
     for i in range(2):
@@ -63,6 +71,8 @@ def construct_result(gen):
 
 
 def overflow_list():
+    """Creates a list in memory with 100 elements
+    """
     res = []
     for n in range(101):
         if n == 100:
@@ -73,6 +83,8 @@ def overflow_list():
 
 
 def overflow_gen():
+    """Generator that would fail at the 100th element
+    """
     n = 0
     while n < 101:
         if n == 100:
@@ -87,7 +99,8 @@ def homemade_context_manager(gen):
     next(gen)
 
 
+
+
 # Local Variables:
 # compile-command: "cd .. && make"
 # End:
-0

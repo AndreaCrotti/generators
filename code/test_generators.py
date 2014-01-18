@@ -41,6 +41,11 @@ def test_gen_even():
     assert gener.construct_result(gen) == [0, 2]
 
 
+def test_yield_from():
+    gen = gener.gen_even_yield_from(0)
+    assert gener.construct_result(gen) == [0, 2]
+
+
 # Local Variables:
 # compile-command: "cd .. && make"
 # End:
