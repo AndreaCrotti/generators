@@ -1,6 +1,8 @@
-========================================
- How to step to the infinite and beyond
-========================================
+===================================
+Generators, iterators and Iterables
+===================================
+
+**Or how to step to the infinite and beyond**
 
 Twitter: @andreacrotti
 

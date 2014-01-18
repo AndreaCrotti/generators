@@ -241,3 +241,17 @@ texinfo_documents = [
 
 # How to display URL addresses: 'footnote', 'no', or 'inline'.
 #texinfo_show_urls = 'footnote'
+
+
+# Output file base name for HTML help builder.
+htmlhelp_basename = 'pyconslidesadoc'
+
+slide_theme = 'single-level'
+# slide_theme_options = {'custom_css':'custom.css'}
+
+slide_link_html_to_slides = True
+slide_link_html_sections_to_slides = True
+slide_relative_path = "./slides/"
+
+slide_link_to_html = True
+slide_html_relative_path = "../"
