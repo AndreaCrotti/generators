@@ -121,8 +121,11 @@ Generator vs Iterable
 
 General suggestion: pick a generator unless you need something specific.
 
-Possible drawbacks
+Lazyness drawbacks
 ==================
+.. Using generators is the way Python uses to do lazy evaluation.
+.. While lazy evaluation is great there can be some cases where it can bite you.
+.. This example is artificial but it's also something that can easily happen.
 
 .. TODO: add an example where debugging with a generator is a lot harder
 
