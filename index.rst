@@ -48,35 +48,56 @@ Composability
 What if I could do this?
 *I want to reuse the generation function*
 
-.. literalinclude:: code/
-
+.. literalinclude:: code/generators.py
+    :pyobject: ten_first_even_yield
 
 .. literalinclude:: code/generators.py
     :pyobject: ten_first_even
 
-Generators
-==========
+Teaser
+======
 
 Infinite list of even numbers:
 
-.. code:: haskell
+.. code-block:: haskell
 
    even = [x | x <- [0..], x `mod` 2 == 0]
 
+Awesome, but in Python?
 
-Teaser example
-==============
- 
-Sieve of Erathostenes
+.. code-block:: python
 
-.. code-block:: haskell
+    (x for x in itertools.count(0) if x % 2 == 0)
 
-    primesTo m = eratos [2..m]  where
-       eratos []     = []
-       eratos (p:xs) = p : eratos (xs `minus` [p, p+p..m])
+Definitions
+===========
 
+.. now it's time to give some definitions (in a top down matter)
+   before we jump in showing some code.
+.. The awesome oneliner I've just shown is a generator expression,
+   which is syntactic sugar to yield new generator objects.
+
+.. A generator is a function that returns an iterator, an iterator
+.. is an object representing a stream of data, basically something
+   that can be looped over with a for loop.
+
+.. And an Iterable at least is any object capable of returning its
+   members one at a time.
+
+- *Generator expression*: A generator expression yields a new generator object.
+- *Generator*: A function which returns an iterator.
+- *Iterator*: An object representing a stream of data.
+- *Iterable*: An object capable of returning its members one at a time.
+
+Even numbers
+============
 
 With a custom generator:
+
+.. code-block:: python
+
+    (x for x in itertools.count(0) if x % 2 == 0)
+
 
 .. literalinclude:: code/generators.py
     :pyobject: gen_even
@@ -89,15 +110,16 @@ With an iterator:
 
 .. TODO: add some information about yield from
 
-Theory
-======
+Generator vs Iterable
+=====================
 
-Iterators, iterable, generators
-===============================
+- Generators are simpler to write
+- Generators keep track of the context for you
 
-- *Generator*: A function which returns an iterator.
-- *Iterator*: An object representing a stream of data.
-- *Iterable*: An object capable of returning its members one at a time.
+- Iterables can have more methods defined
+- Iterables can have more complex logic
+
+General suggestion: pick a generator unless you need something specific.
 
 Possible drawbacks
 ==================
@@ -111,6 +133,19 @@ Possible drawbacks
 
 .. literalinclude:: code/generators.py
     :pyobject: overflow_gen
+
+
+Sieve of Erathostenes
+=====================
+ 
+Sieve of Erathostenes
+
+.. code-block:: haskell
+
+    primesTo m = eratos [2..m]  where
+       eratos []     = []
+       eratos (p:xs) = p : eratos (xs `minus` [p, p+p..m])
+
 
 Generators as lightweight threads
 =================================
