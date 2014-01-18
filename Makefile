@@ -17,7 +17,7 @@ DROP = $(HOME)/Dropbox/Public/talks
 all: test unit
 
 test:
-	nosetests3 code/generators.py
+	nosetests3 code/test_generators.py
 
 upload:
 	cp -Rv $(BUILDDIR) $(DROP)/

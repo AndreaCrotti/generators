@@ -47,18 +47,6 @@ class GenIterator:
         return tmp
 
 
-def test_classic_ten_first_even():
-    assert classic_ten_first_even() == list(range(0, 20, 2))
-
-
-def test_ten_first_even():
-    assert ten_first_even() == list(range(0, 20, 2))
-
-
-def test_classing_even_gen():
-    assert classic_even_gen(0, 2) == [0, 2]
-
-
 def gen_even(start=0):
     even = next_even(start)
     while True:
@@ -97,32 +85,6 @@ def homemade_context_manager(gen):
     """Given a generator function do a try finally
     """
     next(gen)
-
-
-class TestOverflow(unittest.TestCase):
-    def test_overflow_list(self):
-        with self.assertRaises(Exception):
-            overflow_list()
-
-    def test_overflow_gen(self):
-        gen = overflow_gen()
-        self.assertEqual(next(gen), 0)
-        self.assertEqual(next(gen), 1)
-
-
-def test_gen_ifilter():
-    gen = gen_even_filter()
-    assert construct_result(gen) == [0, 2]
-
-
-def test_gen_iterator():
-    iterator = GenIterator(1)
-    assert construct_result(iterator) == [2, 4]
-
-
-def test_gen_even():
-    gen = gen_even(0)
-    assert construct_result(gen) == [0, 2]
 
 
 # Local Variables:
