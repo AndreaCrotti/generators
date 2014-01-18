@@ -137,6 +137,8 @@ Lazyness drawbacks
 .. literalinclude:: code/generators.py
     :pyobject: overflow_gen
 
+The list comprehension *always fails*, the generator only fails when reaching a threshold.
+
 
 Sieve of Erathostenes
 =====================
