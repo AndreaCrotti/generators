@@ -110,12 +110,6 @@ def overflow_gen():
         yield n
         n += 1
 
-
-def homemade_context_manager(gen):
-    """Given a generator function do a try finally
-    """
-    next(gen)
-
 # coroutine examples
 
 
