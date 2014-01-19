@@ -116,7 +116,43 @@ def homemade_context_manager(gen):
     """
     next(gen)
 
+# coroutine examples
 
+
+def grep(pattern):
+    print("Looking for pattern {}".format(pattern))
+    while True:
+        line = (yield)
+        if pattern in line:
+            print("Found pattern {}".format(line))
+        else:
+            print("Pattern {} not found".format(line))
+
+
+class Result:
+    def __init__(self):
+        self.found = False
+
+
+def grep_with_result(pattern, result):
+    print("Looking for pattern {}".format(pattern))
+    while True:
+        line = (yield)
+        if pattern in line:
+            print("Found pattern {}".format(line))
+            result.found = True
+        else:
+            print("Pattern {} not found".format(line))
+            result.found = False
+
+
+def coroutine(func):
+    def start(*args, **kwargs):
+        cr = func(*args, **kwargs)
+        next(cr)
+        return cr
+
+    return start
 
 
 # Local Variables:

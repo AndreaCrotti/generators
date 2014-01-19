@@ -46,6 +46,15 @@ def test_yield_from():
     assert gener.construct_result(gen) == [0, 2]
 
 
+def test_grep():
+    res = gener.Result()
+    grepper = gener.grep_with_result('line', res)
+    next(grepper)
+    grepper.send('very long line')
+    assert res.found is True
+    grepper.send('not there')
+    assert res.found is False
+
 # Local Variables:
 # compile-command: "cd .. && make"
 # End:

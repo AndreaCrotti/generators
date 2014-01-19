@@ -91,6 +91,16 @@ Definitions
 - *Iterator*: An object representing a stream of data.
 - *Iterable*: An object capable of returning its members one at a time.
 
+Why the def
+===========
+
+.. One thing that is quite confusing about generators is that
+.. we are using the same keyword to define a generator that we use for
+   standard function.
+
+.. So the semantic of the function actually changes *just* by the fact
+.. that there is at least one yield in its implementation.
+
 Even numbers
 ============
 
@@ -152,6 +162,16 @@ Sieve of Erathostenes
     primesTo m = eratos [2..m]  where
        eratos []     = []
        eratos (p:xs) = p : eratos (xs `minus` [p, p+p..m])
+
+
+Coroutines
+==========
+
+- Coroutines consume values
+- Generators produce values
+
+.. literalinclude:: code/generators.py
+    :pyobject: grep
 
 
 Generators as lightweight threads
