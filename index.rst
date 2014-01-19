@@ -197,7 +197,7 @@ Resources
 
 - `generator expression PEP 289`_
 - `yield from PEP 380`_
-- `python glossary_`
+- `python glossary`_
 - monocle_
 - coroutines_
 
