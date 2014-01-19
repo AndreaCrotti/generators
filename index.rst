@@ -173,6 +173,12 @@ Coroutines
 .. literalinclude:: code/generators.py
     :pyobject: grep
 
+Coroutines with values
+======================
+
+.. literalinclude:: code/generators.py
+    :pyobject: grep_with_result
+
 
 Generators as lightweight threads
 =================================
@@ -189,8 +195,15 @@ Example from the monocle_ documentation:
 Resources
 =========
 
-.. _generator_expression: http://www.python.org/dev/peps/pep-0289/
-.. _yield_from: http://www.python.org/dev/peps/pep-0380/
-.. _python_glossary: http://docs.python.org/2/glossary.html
+- `generator expression PEP 289`_
+- `yield from PEP 380`_
+- `python glossary_`
+- monocle_
+- coroutines_
+
+.. _`generator expression PEP 289`: http://www.python.org/dev/peps/pep-0289/
+.. _`yield from PEP 380`: http://www.python.org/dev/peps/pep-0380/
+.. _`python glossary`: http://docs.python.org/2/glossary.html
 .. only for python2 for now apparently
 .. _monocle: https://github.com/saucelabs/monocle
+.. _coroutines: http://www.dabeaz.com/coroutines/Coroutines.pdf
