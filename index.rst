@@ -10,6 +10,8 @@ Slides: https://github.com/AndreaCrotti/generator
 
 Working for http://www.wazoku.com/:
 
+**Python3 only code ahead!**
+
 .. image:: img/wazoku.png
    :height: 70
 
@@ -179,6 +181,15 @@ Coroutines with values
 .. literalinclude:: code/generators.py
     :pyobject: grep_with_result
 
+
+Python2 to Python3
+==================
+
+- itertools.ifilter -> filter
+- xrange -> range
+- def next(self) -> def __next__(self)
+- iterable.next() -> next(iterable)
+- _ -> `yield from PEP 380`_
 
 Generators as lightweight threads
 =================================

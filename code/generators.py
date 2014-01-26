@@ -151,6 +151,8 @@ def coroutine(func):
 
 
 def is_prime(number):
+    if number < 2:
+        return False
     if number == 2:
         return True
     else:
@@ -160,6 +162,18 @@ def is_prime(number):
                 return False
 
         return True
+
+
+def gen_primes_count():
+    return filter(is_prime, itertools.count(2))
+
+
+def gen_primes():
+    num = 2
+    while True:
+        if is_prime(num):
+            yield num
+            num += 1
 
 
 # Local Variables:
