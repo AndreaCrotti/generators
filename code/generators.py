@@ -4,6 +4,13 @@ from math import sqrt, ceil
 # TODO: try to use python future to see how the iteration works
 
 
+def count_up_to(start=0, end=3):
+    num = start
+    while num < end:
+        yield num
+        num += 1
+
+
 def classic_even_gen(start=0, end=100):
     assert start <= end, "Invalid range"
     return [num for num in range(start, end + 1) if is_even(num)]

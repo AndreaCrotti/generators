@@ -30,6 +30,23 @@ Generate *even* numbers:
 *Any problem with that??*
 
 
+For loop
+========
+
+Pseudocode execution of a for loop running on an iterator:
+
+::
+
+   while True:
+       try:
+           it = next(g)
+       except StopIteration:
+           break
+       else:
+           body(it)
+           continue
+    
+
 First n even numbers?
 =====================
 
