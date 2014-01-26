@@ -6,7 +6,7 @@ from math import sqrt, ceil
 
 def count_up_to(start=0, end=3):
     num = start
-    while num < end:
+    while num <= end:
         yield num
         num += 1
 
@@ -182,6 +182,22 @@ def gen_primes():
             yield num
             num += 1
 
+
+def sieve_gen():
+    return sieve(itertools.count(2))
+
+
+def sieve(ints):
+    while True:
+        prime = next(ints)
+        yield prime
+        ints = exclude_multiples(prime, ints)
+
+
+def exclude_multiples(n, ints):
+    for i in ints:
+        if (i % n) != 0:
+            yield i
 
 # Local Variables:
 # compile-command: "cd .. && make"

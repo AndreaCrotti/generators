@@ -1,3 +1,4 @@
+import itertools
 import unittest
 
 from . import generators as gener
@@ -61,6 +62,16 @@ def test_is_prime():
     assert gener.is_prime(3)
     assert not gener.is_prime(4)
     assert not gener.is_prime(49)
+
+
+def test_sieve():
+    gen = gener.sieve_gen()
+    assert list(itertools.islice(gen, 0, 3)) == [2, 3, 5]
+
+
+def test_exclude_multiples():
+    lis = [3, 4, 5, 6]
+    assert list(gener.exclude_multiples(2, lis)) == [3, 5]
 
 
 # Local Variables:

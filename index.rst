@@ -228,6 +228,7 @@ Resources
 - `python glossary`_
 - monocle_
 - coroutines_
+- `generators tricks`_
 
 .. _`generator expression PEP 289`: http://www.python.org/dev/peps/pep-0289/
 .. _`yield from PEP 380`: http://www.python.org/dev/peps/pep-0380/
@@ -235,3 +236,4 @@ Resources
 .. only for python2 for now apparently
 .. _monocle: https://github.com/saucelabs/monocle
 .. _coroutines: http://www.dabeaz.com/coroutines/Coroutines.pdf
+.. _`generators tricks`: http://linuxgazette.net/100/pramode.html
