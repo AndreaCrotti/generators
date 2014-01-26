@@ -21,6 +21,9 @@ What's the problem
 - how do I use/define them?
 - why do I even care?
 
+.. image:: img/infinity.jpg
+   :height: 300
+
 Even numbers
 ============
 
