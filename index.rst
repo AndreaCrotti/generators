@@ -225,12 +225,15 @@ Resources
 
 - `generator expression PEP 289`_
 - `yield from PEP 380`_
+- `simple generator PEP 255`_
 - `python glossary`_
 - monocle_
 - coroutines_
 - `generators tricks`_
 - `iterators and generators`_
+- `rock paper scissors as generators`_
 
+.. _`simple generator PEP 255`: http://www.python.org/dev/peps/pep-0255/
 .. _`generator expression PEP 289`: http://www.python.org/dev/peps/pep-0289/
 .. _`yield from PEP 380`: http://www.python.org/dev/peps/pep-0380/
 .. _`python glossary`: http://docs.python.org/2/glossary.html
@@ -239,3 +242,4 @@ Resources
 .. _coroutines: http://www.dabeaz.com/coroutines/Coroutines.pdf
 .. _`generators tricks`: http://linuxgazette.net/100/pramode.html
 .. _`iterators and generators`: http://excess.org/article/2013/02/itergen1/
+.. _`rock paper scissors as generators`: http://excess.org/article/2013/02/itergen2/
