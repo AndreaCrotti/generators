@@ -55,6 +55,14 @@ def test_grep():
     grepper.send('not there')
     assert res.found is False
 
+
+def test_is_prime():
+    assert gener.is_prime(2)
+    assert gener.is_prime(3)
+    assert not gener.is_prime(4)
+    assert not gener.is_prime(49)
+
+
 # Local Variables:
 # compile-command: "cd .. && make"
 # End:

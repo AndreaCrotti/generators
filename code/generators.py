@@ -1,5 +1,6 @@
 import itertools
 import unittest
+from math import sqrt, ceil
 # TODO: try to use python future to see how the iteration works
 
 
@@ -147,6 +148,18 @@ def coroutine(func):
         return cr
 
     return start
+
+
+def is_prime(number):
+    if number == 2:
+        return True
+    else:
+        max_div = ceil(sqrt(number)) + 1
+        for div in range(2, max_div):
+            if number % div == 0:
+                return False
+
+        return True
 
 
 # Local Variables:
