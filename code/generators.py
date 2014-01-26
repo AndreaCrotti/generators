@@ -44,8 +44,8 @@ def ten_first_even_yield():
     gen = gen_even()
     count = 0
     while count < 10:
-        yield gen
-        count += 2
+        yield next(gen)
+        count += 1
 
 
 def is_even(num):

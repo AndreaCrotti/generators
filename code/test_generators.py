@@ -3,13 +3,19 @@ import unittest
 
 from . import generators as gener
 
+FIRST_TEN_EVEN = list(range(0, 20, 2))
+
 
 def test_classic_ten_first_even():
-    assert gener.classic_ten_first_even() == list(range(0, 20, 2))
+    assert gener.classic_ten_first_even() == FIRST_TEN_EVEN
 
 
 def test_ten_first_even():
-    assert gener.ten_first_even() == list(range(0, 20, 2))
+    assert gener.ten_first_even() == FIRST_TEN_EVEN
+
+
+def test_gen_first_even_yield():
+    assert list(gener.ten_first_even_yield()) == FIRST_TEN_EVEN
 
 
 def test_classing_even_gen():

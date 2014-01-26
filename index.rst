@@ -2,19 +2,24 @@
 Generators, iterators and Iterables
 ===================================
 
-**Or how to step to the infinite and beyond**
+**Or how to step to the infinity and beyond**
 
 Twitter: @andreacrotti
 
 Slides: https://github.com/AndreaCrotti/generator
-
-Working for http://www.wazoku.com/:
 
 **Python3 only code ahead!**
 
 .. image:: img/wazoku.png
    :height: 70
 
+
+What's the problem
+==================
+
+- what is a generator/iterable/iterator?
+- how do I use/define them?
+- why do I even care?
 
 Even numbers
 ============
@@ -28,23 +33,6 @@ Generate *even* numbers:
     :pyobject: classic_even_gen
 
 *Any problem with that??*
-
-
-For loop
-========
-
-Pseudocode execution of a for loop running on an iterator:
-
-::
-
-   while True:
-       try:
-           it = next(g)
-       except StopIteration:
-           break
-       else:
-           body(it)
-           continue
     
 
 First n even numbers?
@@ -57,6 +45,8 @@ How do I get the first 10 even numbers?
 
 
 Which becomes more generally:
+
+.. TODO: is this count really an improvement or not really?
 
 .. literalinclude:: code/generators.py
     :pyobject: classic_first_n_even
@@ -109,6 +99,24 @@ Definitions
 - *Generator*: A function which returns an iterator.
 - *Iterator*: An object representing a stream of data.
 - *Iterable*: An object capable of returning its members one at a time.
+
+
+For loop
+========
+
+Pseudocode execution of a for loop running on an iterator:
+
+::
+
+   while True:
+       try:
+           it = next(g)
+       except StopIteration:
+           break
+       else:
+           body(it)
+           continue
+
 
 Why the def
 ===========
