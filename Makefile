@@ -14,7 +14,7 @@ DROP = $(HOME)/Dropbox/Public/talks
 
 .PHONY: unit clean upload
 
-all: test unit
+all: test unit upload
 
 test:
 	nosetests3 code/test_generators.py
