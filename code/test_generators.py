@@ -43,6 +43,11 @@ def test_gen_iterator():
     assert gener.construct_result(iterator) == [2, 4]
 
 
+def test_generator_getitem():
+    res = [x for x in gener.GenIteratorGetItem()]
+    assert res == list(range(10)), res
+
+
 def test_gen_even():
     gen = gener.gen_even(0)
     assert gener.construct_result(gen) == [0, 2]

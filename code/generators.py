@@ -73,6 +73,19 @@ class GenIterator:
         return tmp
 
 
+class GenIteratorGetItem:
+    def __init__(self):
+        self.idx = 0
+
+    def __getitem__(self, item):
+        if self.idx == 10:
+            raise IndexError
+
+        idx = self.idx
+        self.idx += 1
+        return idx
+
+
 def gen_even(start=0):
     even = next_even(start)
     while True:
