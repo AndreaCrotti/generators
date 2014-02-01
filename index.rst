@@ -2,7 +2,8 @@
 Generators, iterators and Iterables
 ===================================
 
-**Or how to step to the infinity and beyond**
+.. Hello I'm Andrea Crotti and I'm going to talk you about today about generators, iterators and iterables.
+.. I currently work in London for a web startup called Wazoku and all the code I'm going to show you is written for Python3 only, but I will have a slide later to point out what are the changes between Python2 and Python3 that affect the code in this talk.
 
 Twitter: @andreacrotti
 
@@ -13,13 +14,12 @@ Slides: https://github.com/AndreaCrotti/generators
 .. image:: img/wazoku.png
    :height: 70
 
-
-What's the problem
-==================
+Agenda
+======
 
 - what is a generator/iterable/iterator?
 - how do I use/define them?
-- why do I even care?
+- why they are so cool?
 
 .. image:: img/infinity.jpg
    :height: 300
@@ -47,12 +47,7 @@ How do I get the first 10 even numbers?
     :pyobject: classic_ten_first_even
 
 
-Which becomes more generally:
-
-.. TODO: is this count really an improvement or not really?
-
-.. literalinclude:: code/generators.py
-    :pyobject: classic_first_n_even
+**BORING**
 
 Composability
 =============

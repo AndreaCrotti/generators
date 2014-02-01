@@ -26,16 +26,6 @@ def classic_ten_first_even():
     return res
 
 
-def classic_first_n_even(count):
-    even = 0
-    res = []
-    while len(res) < count:
-        res.append(even)
-        even += 2
-
-    return res
-
-
 def ten_first_even():
     return list(itertools.islice(gen_even(), 10))
 
