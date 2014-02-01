@@ -55,13 +55,16 @@ Composability
 .. the generation function contains all the logic
 
 What if I could do this?
+
 *I want to reuse the generation function*
 
 .. literalinclude:: code/generators.py
-    :pyobject: ten_first_even_yield
+    :pyobject: ten_first_even
+
+Which is equivalent to:
 
 .. literalinclude:: code/generators.py
-    :pyobject: ten_first_even
+    :pyobject: ten_first_even_yield
 
 Teaser
 ======
@@ -73,6 +76,8 @@ Infinite list of even numbers:
    even = [x | x <- [0..], x `mod` 2 == 0]
 
 Awesome, but in Python?
+
+.. rst-class:: build
 
 .. code-block:: python
 
@@ -120,7 +125,7 @@ Definitions 2
 - *Iterable*: An object capable of returning its members one at a time:
 
 .. literalinclude:: code/generators.py
-    :pyobject: SimpleIterator
+    :pyobject: SimpleIterable
 
 
 For loop
@@ -197,22 +202,15 @@ Lazyness drawbacks
 
 .. TODO: show in real time that this fails
 
+Lazyness drawbacks
+==================
+
 .. literalinclude:: code/generators.py
     :pyobject: overflow_gen
 
+.. rst-class:: build
+
 The list comprehension *always fails*, the generator only fails when reaching a threshold.
-
-
-Sieve of Erathostenes
-=====================
- 
-Sieve of Erathostenes
-
-.. code-block:: haskell
-
-    primesTo m = eratos [2..m]  where
-       eratos []     = []
-       eratos (p:xs) = p : eratos (xs `minus` [p, p+p..m])
 
 
 Coroutines
@@ -238,7 +236,7 @@ Python2 to Python3
 - xrange -> range
 - def next(self) -> def __next__(self)
 - iterable.next() -> next(iterable)
-- _ -> `yield from PEP 380`_
+- **None** -> `yield from PEP 380`_
 
 Generators as lightweight threads
 =================================
@@ -288,3 +286,28 @@ Resources
 .. _`iterators and generators`: http://excess.org/article/2013/02/itergen1/
 .. _`rock paper scissors as generators`: http://excess.org/article/2013/02/itergen2/
 .. _`python for statement`: http://effbot.org/zone/python-for-statement.htm
+
+
+Sieve of Erathostenes
+=====================
+ 
+Sieve of Erathostenes
+
+.. code-block:: haskell
+
+    primesTo m = eratos [2..m]  where
+       eratos []     = []
+       eratos (p:xs) = p : eratos (xs `minus` [p, p+p..m])
+
+Sieve of Erathostenes Python
+============================
+
+.. literalinclude:: code/generators.py
+    :pyobject: exclude_multiples
+
+.. literalinclude:: code/generators.py
+    :pyobject: sieve
+
+.. literalinclude:: code/generators.py
+    :pyobject: sieve_gen
+

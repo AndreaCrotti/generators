@@ -50,7 +50,7 @@ def gen_even_filter():
     return filter(is_even, itertools.count(0))
 
 
-class SimpleIterator:
+class SimpleIterable:
     def __iter__(self):
         return iter([42])
 
