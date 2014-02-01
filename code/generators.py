@@ -60,6 +60,11 @@ def gen_even_filter():
     return filter(is_even, itertools.count(0))
 
 
+class SimpleIterator:
+    def __iter__(self):
+        return iter([42])
+
+
 class GenIterator:
     def __init__(self, start=0):
         self.even = next_even(start)

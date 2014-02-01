@@ -98,10 +98,34 @@ Definitions
 .. And an Iterable at least is any object capable of returning its
    members one at a time.
 
-- *Generator expression*: A generator expression yields a new generator object.
-- *Generator*: A function which returns an iterator.
-- *Iterator*: An object representing a stream of data.
-- *Iterable*: An object capable of returning its members one at a time.
+- *Generator expression*: A generator expression yields a new generator object:
+
+.. code-block:: python
+
+    (x for x in itertools.count(0) if x % 2 == 0)
+
+- *Generator*: A function which returns an iterator:
+
+.. code-block:: python
+
+   def fun():
+       yield 42
+
+
+Definitions 2
+=============
+
+- *Iterator*: An object representing a stream of data:
+
+.. code-block:: python
+
+    [1, 2, 3]
+    set([1, 2, 3])
+
+- *Iterable*: An object capable of returning its members one at a time:
+
+.. literalinclude:: code/generators.py
+    :pyobject: SimpleIterator
 
 
 For loop
@@ -121,15 +145,17 @@ Pseudocode execution of a for loop running on an iterator:
            continue
 
 
-Why the def
-===========
+For loop (2)
+============
 
-.. One thing that is quite confusing about generators is that
-.. we are using the same keyword to define a generator that we use for
-   standard function.
+.. code-block:: python
 
-.. So the semantic of the function actually changes *just* by the fact
-.. that there is at least one yield in its implementation.
+   for x in [1, 2, 3]:
+       print(x)
+
+.. literalinclude:: code/generators.py
+    :pyobject: GenIteratorGetItem
+
 
 Even numbers
 ============
@@ -230,6 +256,17 @@ Example from the monocle_ documentation:
     def request():
         resp = yield HttpClient.query('http://127.0.0.1:8088/')
         print(resp.code, resp.body)
+
+
+Why the def
+===========
+
+.. One thing that is quite confusing about generators is that
+.. we are using the same keyword to define a generator that we use for
+   standard function.
+
+.. So the semantic of the function actually changes *just* by the fact
+.. that there is at least one yield in its implementation.
 
 Resources
 =========
