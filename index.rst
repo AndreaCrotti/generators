@@ -251,8 +251,7 @@ Example from the monocle_ documentation:
         print(resp.code, resp.body)
 
 
-Why the def
-===========
+.. TODO: say something about the def if possible
 
 .. One thing that is quite confusing about generators is that
 .. we are using the same keyword to define a generator that we use for
