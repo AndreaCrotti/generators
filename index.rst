@@ -6,7 +6,7 @@ Generators, iterators and Iterables
 
 Twitter: @andreacrotti
 
-Slides: https://github.com/AndreaCrotti/generator
+Slides: https://github.com/AndreaCrotti/generators
 
 **Python3 only code ahead!**
 
@@ -280,6 +280,7 @@ Resources
 - `generators tricks`_
 - `iterators and generators`_
 - `rock paper scissors as generators`_
+- `python for statement`_
 
 .. _`simple generator PEP 255`: http://www.python.org/dev/peps/pep-0255/
 .. _`generator expression PEP 289`: http://www.python.org/dev/peps/pep-0289/
@@ -291,3 +292,4 @@ Resources
 .. _`generators tricks`: http://linuxgazette.net/100/pramode.html
 .. _`iterators and generators`: http://excess.org/article/2013/02/itergen1/
 .. _`rock paper scissors as generators`: http://excess.org/article/2013/02/itergen2/
+.. _`python for statement`: http://effbot.org/zone/python-for-statement.htm
