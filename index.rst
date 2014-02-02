@@ -268,6 +268,8 @@ Example from the monocle_ documentation:
 Resources
 =========
 
+These slides: https://github.com/AndreaCrotti/generators
+
 - `generator expression PEP 289`_
 - `yield from PEP 380`_
 - `simple generator PEP 255`_
@@ -279,6 +281,7 @@ Resources
 - `rock paper scissors as generators`_
 - `python for statement`_
 - `generators tricks2`_
+- `iterators vs iterables defined`_
 
 .. _`simple generator PEP 255`: http://www.python.org/dev/peps/pep-0255/
 .. _`generator expression PEP 289`: http://www.python.org/dev/peps/pep-0289/
@@ -292,7 +295,7 @@ Resources
 .. _`rock paper scissors as generators`: http://excess.org/article/2013/02/itergen2/
 .. _`python for statement`: http://effbot.org/zone/python-for-statement.htm
 .. _`generators tricks2`: http://www.dabeaz.com/generators/
-
+.. _`iterators vs iterables defined`: http://stackoverflow.com/questions/9884132/understanding-pythons-iterator-iterable-and-iteration-protocols-what-exact
 
 Sieve of Erathostenes (Haskell)
 ===============================
