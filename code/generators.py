@@ -206,7 +206,3 @@ def exclude_multiples(n, ints):
     for i in ints:
         if (i % n) != 0:
             yield i
-
-# Local Variables:
-# compile-command: "cd .. && make"
-# End:

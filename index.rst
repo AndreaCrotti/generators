@@ -98,7 +98,7 @@ Definitions
 .. And an Iterable at least is any object capable of returning its
    members one at a time.
 
-- *Generator expression*: A generator expression yields a new generator object:
+- *Generator expression*: A generator expression evaluates to a generator:
 
 .. code-block:: python
 
@@ -138,11 +138,9 @@ Pseudocode execution of a for loop running on an iterator:
    while True:
        try:
            it = next(g)
+           body(it)
        except StopIteration:
            break
-       else:
-           body(it)
-           continue
 
 
 For loop (2)
@@ -191,6 +189,7 @@ General suggestion: pick a generator unless you need something specific.
 
 Lazyness drawbacks
 ==================
+**Buggy code ahead**
 .. Using generators is the way Python uses to do lazy evaluation.
 .. While lazy evaluation is great there can be some cases where it can bite you.
 .. This example is artificial but it's also something that can easily happen.
@@ -204,6 +203,7 @@ Lazyness drawbacks
 
 Lazyness drawbacks
 ==================
+**Buggy code ahead**
 
 .. literalinclude:: code/generators.py
     :pyobject: overflow_gen
@@ -251,6 +251,8 @@ Example from the monocle_ documentation:
         print(resp.code, resp.body)
 
 
+**Write asynchronous code in a synchronous style**
+
 .. TODO: say something about the def if possible
 
 .. One thing that is quite confusing about generators is that
@@ -273,6 +275,7 @@ Resources
 - `iterators and generators`_
 - `rock paper scissors as generators`_
 - `python for statement`_
+- `generators tricks`_
 
 .. _`simple generator PEP 255`: http://www.python.org/dev/peps/pep-0255/
 .. _`generator expression PEP 289`: http://www.python.org/dev/peps/pep-0289/
@@ -285,6 +288,7 @@ Resources
 .. _`iterators and generators`: http://excess.org/article/2013/02/itergen1/
 .. _`rock paper scissors as generators`: http://excess.org/article/2013/02/itergen2/
 .. _`python for statement`: http://effbot.org/zone/python-for-statement.htm
+.. _`generators tricks: http://www.dabeaz.com/generators/
 
 
 Sieve of Erathostenes
