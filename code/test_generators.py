@@ -11,7 +11,7 @@ def test_classic_ten_first_even():
 
 
 def test_ten_first_even():
-    assert gener.ten_first_even() == FIRST_TEN_EVEN
+    assert list(gener.ten_first_even()) == FIRST_TEN_EVEN
 
 
 def test_gen_first_even_yield():

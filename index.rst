@@ -226,7 +226,7 @@ Python2 to Python3
 - xrange -> range
 - def next(self) -> def __next__(self)
 - iterable.next() -> next(iterable)
-- **None** -> `yield from PEP 380`_
+- **Nothing** -> `yield from PEP 380`_
 
 Generators as lightweight threads
 =================================

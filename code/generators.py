@@ -29,7 +29,7 @@ def classic_ten_first_even():
 
 
 def ten_first_even():
-    return list(itertools.islice(gen_even(), 10))
+    return itertools.islice(gen_even(), 10)
 
 
 def ten_first_even_yield():
@@ -42,10 +42,6 @@ def ten_first_even_yield():
 
 def is_even(num):
     return num % 2 == 0
-
-
-def next_even(num):
-    return num if is_even(num) else (num + 1)
 
 
 def gen_even_filter():
@@ -64,7 +60,7 @@ class SimpleIterator:
 
 class GenIterator:
     def __init__(self, start=0):
-        self.even = next_even(start)
+        self.even = start if is_even(start) else start + 1
 
     def __iter__(self):
         return self
@@ -89,7 +85,7 @@ class GenIteratorGetItem:
 
 
 def gen_even(start=0):
-    even = next_even(start)
+    even = start if is_even(start) else start + 1
     while True:
         yield even
         even += 2
