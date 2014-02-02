@@ -179,6 +179,10 @@ General suggestion: pick a generator unless you need something specific.
 Lazyness drawbacks
 ==================
 
+.. TODO: add something about the fact that you can consume the
+   generator ONLY ONCE, and that it's quite hard to get confused in
+   that sense.
+
 **Buggy code ahead!!**
 
 .. Using generators is the way Python uses to do lazy evaluation.
