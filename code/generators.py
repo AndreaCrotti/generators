@@ -57,6 +57,11 @@ class SimpleIterable:
         return iter([42])
 
 
+class SimpleIterator:
+    def __next__(self):
+        return 42
+
+
 class GenIterator:
     def __init__(self, start=0):
         self.even = next_even(start)

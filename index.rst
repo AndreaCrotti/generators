@@ -115,14 +115,17 @@ Definitions
 Definitions 2
 =============
 
-- *Iterator*: An object representing a stream of data:
+- *Iterator*: An object representing a stream of data (defines __next__):
+
+.. literalinclude:: code/generators.py
+    :pyobject: SimpleIterator
 
 .. code-block:: python
 
     [1, 2, 3]
     set([1, 2, 3])
 
-- *Iterable*: An object capable of returning its members one at a time:
+- *Iterable*: An object capable of returning its members one at a time (defines __iter__):
 
 .. literalinclude:: code/generators.py
     :pyobject: SimpleIterable
