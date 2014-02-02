@@ -189,7 +189,7 @@ Lazyness drawbacks
 
 .. rst-class:: build
 
-The list comprehension *always fails*, the generator only fails when reaching a threshold.
+The list comprehension always fails!, the generator only fails when reaching a threshold.
 
 
 Coroutines
