@@ -75,7 +75,7 @@ class GenIterableGetItem:
     def __init__(self):
         self.idx = 0
 
-    def __getitem__(self, item):
+    def __getitem__(self, _):
         if self.idx == 10:
             raise IndexError
 
@@ -93,10 +93,6 @@ def gen_even(start=0):
 
 def gen_even_yield_from(start=0):
     yield from gen_even(start)
-
-
-def simple_coroutines():
-    pass
 
 
 def construct_result(gen):
