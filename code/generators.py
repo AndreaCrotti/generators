@@ -12,7 +12,9 @@ def count_up_to(start=0, end=3):
 
 
 def classic_even_gen(start=0, end=100):
-    assert start <= end, "Invalid range"
+    if start > end:
+        raise ValueError("Invalid range")
+
     return [num for num in range(start, end + 1) if is_even(num)]
 
 
