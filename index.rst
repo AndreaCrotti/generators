@@ -115,7 +115,7 @@ Definitions
 Definitions 2
 =============
 
-- *Iterator*: An object representing a stream of data (defines __next__):
+- *Iterator*: How do you iterate? (defines __next__):
 
 .. literalinclude:: code/generators.py
     :pyobject: SimpleIterator
@@ -125,37 +125,10 @@ Definitions 2
     [1, 2, 3]
     set([1, 2, 3])
 
-- *Iterable*: An object capable of returning its members one at a time (defines __iter__):
+- *Iterable*: Can you iterate? (defines __iter__):
 
 .. literalinclude:: code/generators.py
     :pyobject: SimpleIterable
-
-
-For loop
-========
-
-Pseudocode execution of a for loop running on an iterator:
-
-::
-
-   while True:
-       try:
-           it = next(g)
-           body(it)
-       except StopIteration:
-           break
-
-
-For loop (2)
-============
-
-.. code-block:: python
-
-   for x in [1, 2, 3]:
-       print(x)
-
-.. literalinclude:: code/generators.py
-    :pyobject: GenIteratorGetItem
 
 
 Even numbers
@@ -299,6 +272,35 @@ These slides: https://github.com/AndreaCrotti/generators
 .. _`python for statement`: http://effbot.org/zone/python-for-statement.htm
 .. _`generators tricks2`: http://www.dabeaz.com/generators/
 .. _`iterators vs iterables defined`: http://stackoverflow.com/questions/9884132/understanding-pythons-iterator-iterable-and-iteration-protocols-what-exact
+
+
+For loop
+========
+
+Pseudocode execution of a for loop running on an iterator:
+
+::
+
+   while True:
+       try:
+           it = next(g)
+           body(it)
+       except StopIteration:
+           break
+
+
+For loop (2)
+============
+
+.. code-block:: python
+
+   for x in [1, 2, 3]:
+       print(x)
+
+.. literalinclude:: code/generators.py
+    :pyobject: GenIteratorGetItem
+
+
 
 Sieve of Erathostenes (Haskell)
 ===============================
