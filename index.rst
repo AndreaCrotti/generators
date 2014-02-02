@@ -156,8 +156,8 @@ With a generator:
 .. literalinclude:: code/generators.py
     :pyobject: gen_even
 
-Iterable
-========
+Even numbers (Iterable)
+=======================
 
 .. literalinclude:: code/generators.py
     :pyobject: GenIterable
