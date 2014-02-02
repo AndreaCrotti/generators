@@ -109,13 +109,13 @@ Definitions
 .. And an Iterable at least is any object capable of returning its
    members one at a time.
 
-- *Generator expression*: A generator expression evaluates to a generator:
+- **Generator expression**: A generator expression evaluates to a generator:
 
 .. code-block:: python
 
     (x for x in itertools.count(0) if x % 2 == 0)
 
-- *Generator*: A function that yields something:
+- **Generator**: A function that yields something:
 
 .. code-block:: python
 
