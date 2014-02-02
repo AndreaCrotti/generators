@@ -39,12 +39,12 @@ def test_gen_ifilter():
 
 
 def test_gen_iterator():
-    iterator = gener.GenIterator(1)
+    iterator = gener.GenIterable(1)
     assert gener.construct_result(iterator) == [2, 4]
 
 
 def test_generator_getitem():
-    res = [x for x in gener.GenIteratorGetItem()]
+    res = [x for x in gener.GenIterableGetItem()]
     assert res == list(range(10)), res
 
 

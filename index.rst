@@ -115,7 +115,7 @@ Definitions
 
     (x for x in itertools.count(0) if x % 2 == 0)
 
-- *Generator*: A function which returns an iterator:
+- *Generator*: A function that yields something:
 
 .. code-block:: python
 
@@ -126,7 +126,7 @@ Definitions
 Definitions 2
 =============
 
-- *Iterator*: How do you iterate? (defines __next__):
+- **Iterator**: How do you iterate? (defines __next__):
 
 .. literalinclude:: code/generators.py
     :pyobject: SimpleIterator
@@ -136,30 +136,32 @@ Definitions 2
     [1, 2, 3]
     set([1, 2, 3])
 
-- *Iterable*: Can you iterate? (defines __iter__):
+- **Iterable**: Can you iterate? (defines __iter__):
 
 .. literalinclude:: code/generators.py
     :pyobject: SimpleIterable
 
 
-Even numbers
-============
+Even numbers (generator)
+========================
 
-With a custom generator:
+Generator expression:
 
 .. code-block:: python
 
     (x for x in itertools.count(0) if x % 2 == 0)
 
+With a generator:
 
 .. literalinclude:: code/generators.py
     :pyobject: gen_even
 
-
-With an iterator:
+Iterable
+========
 
 .. literalinclude:: code/generators.py
-   :pyobject: GenIterator
+    :pyobject: GenIterable
+
 
 .. TODO: add some information about yield from
 
@@ -309,7 +311,7 @@ For loop (2)
        print(x)
 
 .. literalinclude:: code/generators.py
-    :pyobject: GenIteratorGetItem
+    :pyobject: GenIterableGetItem
 
 
 

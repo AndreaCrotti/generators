@@ -58,7 +58,7 @@ class SimpleIterator:
         return 42
 
 
-class GenIterator:
+class GenIterable:
     def __init__(self, start=0):
         self.even = start if is_even(start) else start + 1
 
@@ -71,7 +71,7 @@ class GenIterator:
         return tmp
 
 
-class GenIteratorGetItem:
+class GenIterableGetItem:
     def __init__(self):
         self.idx = 0
 
