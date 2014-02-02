@@ -27,6 +27,14 @@ Agenda
 Even numbers
 ============
 
+.. So now I'm going to solve an incredibly simple problem, we only need
+.. to generate a list of even numbers.
+.. This takes a start and an end number, and return the list of even numbers in that range.
+
+.. That's simple and clear, but what is the problem with this?
+.. Well there are two problems, the first is that it generates the whole list in memory, the second is that we need to pass an upper limit and a lower limit.
+.. which brings to the next question, what if I want to get the first 10 even numbers?
+
 Generate *even* numbers:
 
 .. literalinclude:: code/generators.py
@@ -49,10 +57,10 @@ How do I get the first 10 even numbers?
 
 **BORING**
 
-Composability
-=============
+Solution?
+=========
 
-.. the generation function contains all the logic
+.. the generation function contains all the logic, but unfortunately I cannot reuse .. What if I had something called gen_even which 
 
 What if I could do this?
 
@@ -69,7 +77,7 @@ Which is equivalent to:
 Teaser
 ======
 
-Infinite list of even numbers:
+Infinite list of even numbers (in Haskell):
 
 .. code-block:: haskell
 
@@ -77,11 +85,14 @@ Infinite list of even numbers:
 
 Awesome, but in Python?
 
-.. rst-class:: build
-
 .. code-block:: python
 
     (x for x in itertools.count(0) if x % 2 == 0)
+
+Equivalent to:
+
+.. literalinclude:: code/generators.py
+    :pyobject: gen_even
 
 Definitions
 ===========
