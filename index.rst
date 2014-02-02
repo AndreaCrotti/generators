@@ -294,8 +294,8 @@ Resources
 .. _`generators tricks2`: http://www.dabeaz.com/generators/
 
 
-Sieve of Erathostenes
-=====================
+Sieve of Erathostenes (Haskell)
+===============================
  
 Sieve of Erathostenes
 
@@ -305,8 +305,8 @@ Sieve of Erathostenes
        eratos []     = []
        eratos (p:xs) = p : eratos (xs `minus` [p, p+p..m])
 
-Sieve of Erathostenes Python
-============================
+Sieve of Erathostenes (Python)
+==============================
 
 .. literalinclude:: code/generators.py
     :pyobject: exclude_multiples
